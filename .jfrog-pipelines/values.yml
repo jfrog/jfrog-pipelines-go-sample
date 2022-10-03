@@ -1,0 +1,3 @@
+repoPath: jfrog/jfrog-pipelines-go-Sample
+gitProvider: myGitHubIntegration
+artifactory: myArtifactoryIntegration
