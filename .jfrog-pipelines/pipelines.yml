@@ -20,7 +20,7 @@ resources:
 
 
 pipelines:
-  - name: go_build_pipeline_example
+  - name: go_build_pipeline
     configuration:
       jfrogCliVersion: 2  
     steps:
@@ -29,7 +29,7 @@ pipelines:
         type: GoBuild
         configuration:
           sourceLocation: .
-          resolverRepo: go-virtual
+          resolverRepo: quickstart-go-virtual
           noRegistry: true
           inputResources:
             - name: go_repo
@@ -42,7 +42,7 @@ pipelines:
         configuration:
           inputSteps:
             - name: build_go
-          targetRepository: go-local
+          targetRepository: quickstart-go-local
           integrations:
             - name: {{ .Values.artifactory }}
 
