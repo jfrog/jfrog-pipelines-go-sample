@@ -42,7 +42,7 @@ pipelines:
         configuration:
           inputSteps:
             - name: build_go
-          targetRepository: quickstart-go-local
+          targetRepository: quickstarts-go-local
           integrations:
             - name: {{ .Values.artifactory }}
 
