@@ -20,7 +20,7 @@ resources:
 
 
 pipelines:
-  - name: Go_Build_QuickStart
+  - name: Go_QuickStart
     configuration:
       jfrogCliVersion: 2  
     steps:
