@@ -18,7 +18,7 @@ resources:
     configuration:
       sourceArtifactory: {{ .Values.artifactory }}
       
-  - name: cron_trigger
+  - name: cron_trigger_go
     type: CronTrigger
     configuration:
       interval: '0 1 * * *'       
@@ -38,7 +38,7 @@ pipelines:
           noRegistry: true
           inputResources:
             - name: go_repo
-            - name: cron_trigger
+            - name: cron_trigger_go
           integrations:
             - name: {{ .Values.artifactory }}
 
