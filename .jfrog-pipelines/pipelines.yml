@@ -45,7 +45,7 @@ pipelines:
         execution:
           onStart:
             - send_notification mySlackIntegration --text "Pipeline started"     # replace 'mySlack' with the name of your Slack integration
-          onExecute:
+          onFailure:
             - send_notification mySlackIntegration --text "Pipeline failed"      # replace 'mySlack' with the name of your Slack integration
           onSuccess:
             - send_notification mySlackIntegration     # without '--text' to send a generic notification that includes the pipeline name and step name            
