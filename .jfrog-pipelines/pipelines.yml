@@ -41,6 +41,14 @@ pipelines:
             - name: cron_trigger_go
           integrations:
             - name: {{ .Values.artifactory }}
+            - name: {{ .Values.slack }}
+        execution:
+          onStart:
+            - send_notification mySlackIntegration --text "Pipeline started"     # replace 'mySlack' with the name of your Slack integration
+          onExecute:
+            - send_notification mySlackIntegration --text "Pipeline failed"      # replace 'mySlack' with the name of your Slack integration
+          onSuccess:
+            - send_notification mySlackIntegration     # without '--text' to send a generic notification that includes the pipeline name and step name            
 
       # Publish the Go sample app binary to Artifactory. Docs at https://www.jfrog.com/confluence/display/JFROG/GoPublishBinary
       - name: publish_go_binary
