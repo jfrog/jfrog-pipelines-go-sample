@@ -33,7 +33,7 @@ pipelines:
       - name: build_go
         type: GoBuild
         configuration:
-          sourceLocation: ..
+          sourceLocation: .
           resolverRepo: quickstart-go-virtual
           noRegistry: true
           inputResources:
